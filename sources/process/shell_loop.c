@@ -22,14 +22,19 @@ static void if_forst(main_t *shell)
     if (shell->word_command[1] && my_strcmp(shell->word_command[0], "my_ls") ==
     0)
         ls_fct(shell);
-    if (shell->word_command[1] && my_strcmp(shell->word_command[0], "exit") ==
-    0)
+    if (my_strcmp(shell->word_command[0], "exit") == false) {
         for (; shell->word_command[i]; ++i);
-        if (i >= 3 || !is_alphanum(my_atoi(shell->word_command[1]))) {
-            my_printf("exit: Expression Synthax\n");
+        if (!shell->word_command[1]) {
+            my_printf("exit\nbash: exit: number argument necessary\n");
+            return;
+        }
+        if (i >= 3 || is_str_nbr(shell->word_command[1]) == false) {
+            my_printf("exit\nbash: exit: %s : number argument necessary\n", \
+            shell->word_command[1]);
             return;
         }
         exit((my_atoi(shell->word_command[1])));
+    }
 }
 
 void shell_loop(main_t *shell)

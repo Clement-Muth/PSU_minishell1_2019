@@ -110,7 +110,7 @@ double my_atof(const char *str);
 /// Check if a char is a character
 ///
 ////////////////////////////////////////////////////////////
-int is_alphanum(char c);
+_Bool is_alphanum(char c);
 
 ////////////////////////////////////////////////////////////
 /// \brief Convert a string to an integer
@@ -313,5 +313,15 @@ int my_strcmp(const char *compared, const char *comparing);
 /// \return string resized
 ////////////////////////////////////////////////////////////
 char *my_stresize(char *string, size_t beg, size_t end);
+
+
+////////////////////////////////////////////////////////////
+/// \brief Check if a string is a number
+///
+/// \param String to check
+///
+/// \return true is it's a string of number else false
+////////////////////////////////////////////////////////////
+_Bool is_str_nbr(char *string);
 
 #endif /* !MY_H_ */
