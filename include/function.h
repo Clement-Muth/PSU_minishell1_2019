@@ -58,4 +58,8 @@ void cd_fct(main_t *shell);
 
 void ls_fct(main_t *shell);
 
+void exit_fct(main_t *shell);
+
+void clear_fct(main_t *shell);
+
 #endif /* !FUNCTION_H_ */

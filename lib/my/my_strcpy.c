@@ -7,8 +7,10 @@
 
 char *my_strcpy(char *dest, const char *src)
 {
-    char *tmp = dest;
-
-    while ((*dest++) = (*src++));
-    return (tmp);
+    for (int i = 0; src[i]; ++i) {
+        if (src[i] == '\n')
+            i++;
+        dest[i] = src[i];
+    }
+    return (dest);
 }

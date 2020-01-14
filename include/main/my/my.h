@@ -203,7 +203,7 @@ char **my_file_to_word_array(char *filepath);
 ///
 /// \return string array filled
 ////////////////////////////////////////////////////////////
-char **my_str_to_word_array(char *str);
+char **my_str_to_word_array(char *str, char *lim);
 
 ////////////////////////////////////////////////////////////
 /// \brief Fill a string array of another string array
@@ -303,7 +303,7 @@ char *my_strcpy(char *dest, const char *src);
 ///
 /// \return int represented the ascii difference
 ////////////////////////////////////////////////////////////
-int my_strcmp(const char *compared, const char *comparing);
+_Bool my_strcmp(const char *compared, const char *comparing);
 
 ////////////////////////////////////////////////////////////
 /// \brief Resize a string
