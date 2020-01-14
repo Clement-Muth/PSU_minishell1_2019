@@ -5,6 +5,8 @@
 ** my_str_to_word_array
 */
 
+#include "include/my.h"
+
 int is_charac(char c, int status)
 {
     if (status == 1)

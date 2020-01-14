@@ -13,6 +13,11 @@ static void free_fct(char *string, char **string2)
     free(string2);
 }
 
+static void (*process_fct[])(main_t *) = {
+    cd_fct,
+    ls_fct
+};
+
 void shell_loop(main_t *shell)
 {
     shell->command = NULL;
@@ -20,7 +25,8 @@ void shell_loop(main_t *shell)
 
     display_prompt(shell);
     getline(&shell->command, &shell->size, stdin);
-    my_str_to_word_array(shell->command);
+    shell->word_command = my_str_to_word_array(shell->command);
+    ls_fct(shell);
     free_fct(shell->command, shell->word_command);
     shell_loop(shell);
 }

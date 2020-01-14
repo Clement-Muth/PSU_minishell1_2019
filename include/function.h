@@ -18,7 +18,7 @@
 ///
 /// \return 84 if an error occured. else return 0
 ////////////////////////////////////////////////////////////
-_Bool initialisation(main_t *shell);
+_Bool initialisation(main_t *shell, char **evrnmt, char **av);
 
 
 ////////////////////////////////////////////////////////////
@@ -53,5 +53,9 @@ void display(main_t *shell);
 void shell_loop(main_t *shell);
 
 void display_prompt(main_t *shell);
+
+void cd_fct(main_t *shell);
+
+void ls_fct(main_t *shell);
 
 #endif /* !FUNCTION_H_ */

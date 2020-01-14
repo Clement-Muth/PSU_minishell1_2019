@@ -31,7 +31,7 @@ static char *path(char *string)
 
 void display_prompt(main_t *shell)
 {
-    my_putstrc("cmuth@debian10-1", GREEN, true);
+    my_putstrc("@debian10-1", GREEN, true);
     my_putchar(':');
     my_putstrc(path(getcwd(NULL, (size_t)500)), BLUE, true);
     my_putstrb("$");

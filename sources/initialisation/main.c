@@ -11,9 +11,10 @@
 #include <unistd.h>
 #include <limits.h>
 
-int main(int ac, char **av, char **evrnmt)
+int main(int ac, char **av)
 {
     main_t *shell = malloc(sizeof(main_t));
 
+    initialisation(shell, __environ, av);
     shell_loop(shell);
 }

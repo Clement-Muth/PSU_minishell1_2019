@@ -24,7 +24,8 @@ ERROR			=	error_handling.c								\
 
 ## ========================================================================== ##
 PATH_PROCESS		=	./sources/process/
-PROCESS				=	shell_loop.c
+PROCESS				=	shell_loop.c								\
+						process_fct.c
 
 
 ## ========================================================================== ##
@@ -47,7 +48,7 @@ CC				= 	@gcc
 
 INCLUDE_DIR		=	./include
 
-CFLAGS			=	-g -I./include/ -D_GNU_SOURCE -Wall -Wextra -pedantic -O3 -O2 -Wunused
+CFLAGS			=	-g -I./include/ -D_GNU_SOURCE
 
 LDFLAGS 		= 	-lm -lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio
 

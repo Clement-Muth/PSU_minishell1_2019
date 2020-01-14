@@ -14,6 +14,8 @@ typedef struct
     char *command;
     char *path;
     char **word_command;
+    char **evrnmt;
+    char **av;
 } main_t;
 
 #endif /* !STRUCT_H_int */

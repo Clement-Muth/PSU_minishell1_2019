@@ -9,5 +9,5 @@
 
 _Bool error_handling(main_t *shell, int ac, char **av)
 {
-
+    return (true);
 }
