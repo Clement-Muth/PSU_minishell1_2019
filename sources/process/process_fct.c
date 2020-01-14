@@ -9,7 +9,10 @@
 
 void cd_fct(main_t *shell)
 {
-    chdir(shell->word_command[1]);
+    if (shell->word_command[1])
+        chdir(shell->word_command[1]);
+    else
+        chdir("~");
 }
 
 void ls_fct(main_t *shell)
@@ -20,7 +23,7 @@ void ls_fct(main_t *shell)
         free(shell);
         exit(EXIT_ERROR);
     } else if (0 == id)
-        execve("/bin/my_ls", shell->av, __environ);
+        execve("/bin/my_ls", shell->word_command, __environ);
     else
         wait(NULL);
 }
