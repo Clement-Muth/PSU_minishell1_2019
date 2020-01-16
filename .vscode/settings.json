@@ -1,7 +1,0 @@
-{
-    "files.associations": {
-        "main.h": "c",
-        "wait.h": "c",
-        "my_printf.h": "c"
-    }
-}

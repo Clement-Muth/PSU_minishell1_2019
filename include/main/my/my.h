@@ -54,9 +54,11 @@
 
 #define GREEN "\x1B[32m"
 
-#define RED "\x1B[41m"
+#define RED "\x1B[31m"
 
 #define YEL "\x1B[93m"
+
+#define MAJ "\x1B[35m"
 
 #define CYAN "\x1B[36m"
 
@@ -323,5 +325,60 @@ char *my_stresize(char *string, size_t beg, size_t end);
 /// \return true is it's a string of number else false
 ////////////////////////////////////////////////////////////
 _Bool is_str_nbr(char *string);
+
+////////////////////////////////////////////////////////////
+/// \brief Remove character of a string
+///
+/// \param String to modify
+///
+/// \return modified string
+////////////////////////////////////////////////////////////
+char *my_str_rm(char *string, char __DELETE);
+
+////////////////////////////////////////////////////////////
+/// \brief Remove \n of string
+///
+/// \param String to modify
+///
+/// \return void
+////////////////////////////////////////////////////////////
+void rm_jline(char *string);
+
+void *my_memalloc(size_t size);
+
+////////////////////////////////////////////////////////////
+/// \brief Add a row to a table
+///
+/// \param Array to modify
+///
+/// \param String to add
+///
+/// \return void
+////////////////////////////////////////////////////////////
+void my_add_line_array(char **array, char *string);
+
+////////////////////////////////////////////////////////////
+/// \brief Edit a row in a table
+///
+/// \param Array to edit
+///
+/// \param String to replace
+///
+/// \param Line to edit
+///
+/// \return void
+////////////////////////////////////////////////////////////
+void my_modif_line_array(char **array, char *string, size_t line);
+
+////////////////////////////////////////////////////////////
+/// \brief Remove a row in a table
+///
+/// \param Array to edit
+///
+/// \param Line to remove
+///
+/// \return void
+////////////////////////////////////////////////////////////
+void my_rm_line_array(char **array, size_t line);
 
 #endif /* !MY_H_ */

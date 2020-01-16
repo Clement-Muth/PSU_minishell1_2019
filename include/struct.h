@@ -11,11 +11,11 @@
 typedef struct
 {
     size_t size;
+    int ac;
     char *command;
     char *path;
-    char **word_command;
-    char **evrnmt;
     char **av;
+    char **evrnmt;
 } main_t;
 
 #endif /* !STRUCT_H_int */

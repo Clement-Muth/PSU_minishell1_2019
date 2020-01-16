@@ -7,9 +7,9 @@
 
 #include "main/main.h"
 
-_Bool initialisation(main_t *shell, char **evrnmt, char **av)
+void initialisation(main_t *shell)
 {
-    shell->evrnmt = evrnmt;
-    shell->av = av;
-    return (EXIT_SUCCESS);
+    av = NULL;
+    shell->size = 0;
+    shell->command = NULL;
 }

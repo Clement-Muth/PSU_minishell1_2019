@@ -25,7 +25,8 @@ ERROR			=	error_handling.c								\
 ## ========================================================================== ##
 PATH_PROCESS		=	./sources/process/
 PROCESS				=	shell_loop.c								\
-						process_fct.c
+						process_fct.c								\
+						process_ftc2.c
 
 
 ## ========================================================================== ##

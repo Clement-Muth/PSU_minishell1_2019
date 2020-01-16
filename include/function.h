@@ -18,7 +18,7 @@
 ///
 /// \return 84 if an error occured. else return 0
 ////////////////////////////////////////////////////////////
-_Bool initialisation(main_t *shell, char **evrnmt, char **av);
+void initialisation(main_t *shell);
 
 
 ////////////////////////////////////////////////////////////
@@ -28,7 +28,7 @@ _Bool initialisation(main_t *shell, char **evrnmt, char **av);
 ///
 /// \return 84 if an error occured. else return 0
 ////////////////////////////////////////////////////////////
-_Bool error_handling(main_t *shell, int ac, char **av);
+_Bool error_handling(main_t *shell);
 
 
 ////////////////////////////////////////////////////////////
@@ -61,5 +61,11 @@ void ls_fct(main_t *shell);
 void exit_fct(main_t *shell);
 
 void clear_fct(main_t *shell);
+
+void setenv_fct(main_t *shell);
+
+void unsetenv_fct(main_t *shell);
+
+void display_env(main_t *shell);
 
 #endif /* !FUNCTION_H_ */

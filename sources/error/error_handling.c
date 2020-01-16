@@ -7,7 +7,7 @@
 
 #include "main/main.h"
 
-_Bool error_handling(main_t *shell, int ac, char **av)
+_Bool error_handling(main_t *shell)
 {
     return (true);
 }

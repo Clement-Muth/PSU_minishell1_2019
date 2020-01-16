@@ -11,9 +11,8 @@ void *my_memalloc(size_t size)
 {
     void *mem = malloc(size);
 
-    if (mem) {
-        my_bzero(mem, size);
+    if (mem)
         return (mem);
-    } else
-        return (NULL);
+    free(mem);
+    exit(EXIT_ERROR);
 }

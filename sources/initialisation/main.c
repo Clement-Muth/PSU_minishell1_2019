@@ -6,15 +6,13 @@
 */
 
 #include "main/main.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
 
-int main(int ac, char **av)
+int main(void)
 {
-    main_t *shell = malloc(sizeof(main_t));
+    main_t *shell = my_memalloc(sizeof(main_t));
 
-    initialisation(shell, __environ, av);
+    shell->evrnmt = __environ;
     shell_loop(shell);
+    free(shell);
+    return (EXIT_SUCCESS);
 }
