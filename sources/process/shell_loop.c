@@ -26,7 +26,7 @@ void (*process_fct[])(main_t *) = {
 static void parsing_process(main_t *shell)
 {
     int i = 0;
-    char *opt[] = {"cd", "my_ls", "exit", "clear", "setenv", "unsetenv",
+    char *opt[] = {"cd", "my_ls", "exit", "cl", "setenv", "unsetenv",
     "env", NULL};
 
     rm_jline(shell->command);
@@ -38,6 +38,19 @@ static void parsing_process(main_t *shell)
             process_fct[i](shell);
 }
 
+static void my_execve(main_t *shell)
+{
+    pid_t id = fork();
+
+    if (-1 == id) {
+        free(shell);
+        exit(EXIT_ERROR);
+    } else if (0 == id)
+        execve(my_strcat("/bin/", av[0]), av, __environ);
+    else
+        wait(NULL);
+}
+
 void shell_loop(main_t *shell)
 {
     while (1) {
@@ -45,6 +58,7 @@ void shell_loop(main_t *shell)
         display_prompt(shell);
         getline(&shell->command, &shell->size, stdin);
         parsing_process(shell);
+        my_execve(shell);
         free_fct(shell);
     }
 }
