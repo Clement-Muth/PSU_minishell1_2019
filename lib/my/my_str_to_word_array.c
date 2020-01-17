@@ -63,7 +63,6 @@ char **my_str_to_word_array(char *str, char *lim)
     int y = 0;
     int x = 0;
 
-    tab = malloc(sizeof(char *) * nb_word + 1);
     while (str[i]) {
         x = 0;
         for (i = i; (my_delim(str[i], lim) == -1 && str[i]); i++);
@@ -76,4 +75,14 @@ char **my_str_to_word_array(char *str, char *lim)
     }
     tab[y] = NULL;
     return (tab);
+}
+
+int main(void)
+{
+    char string[] = "Bonjour comment ca va";
+    char **test = malloc(sizeof(char *) * count_word(string, " ") + 1);
+
+
+    my_str_to_word_array(string, " ");
+    my_putstrstr(test);
 }
