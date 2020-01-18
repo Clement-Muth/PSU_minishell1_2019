@@ -9,20 +9,7 @@
 
 void cd_fct(main_t *shell)
 {
-    chdir(av[1]);
-}
-
-void ls_fct(main_t *shell)
-{
-    pid_t id = fork();
-
-    if (-1 == id) {
-        free(shell);
-        exit(EXIT_ERROR);
-    } else if (0 == id)
-        execve("/bin/my_ls", av, __environ);
-    else
-        wait(NULL);
+    // chdir(av[1]);
 }
 
 void exit_fct(main_t *shell)

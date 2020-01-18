@@ -15,7 +15,6 @@ static void free_fct(main_t *shell)
 
 void (*process_fct[])(main_t *) = {
     cd_fct,
-    ls_fct,
     exit_fct,
     clear_fct,
     setenv_fct,
@@ -26,7 +25,7 @@ void (*process_fct[])(main_t *) = {
 static void parsing_process(main_t *shell)
 {
     int i = 0;
-    char *opt[] = {"cd", "my_ls", "exit", "cl", "setenv", "unsetenv",
+    char *opt[] = {"cd", "exit", "cl", "setenv", "unsetenv",
     "env", NULL};
 
     rm_jline(shell->command);
